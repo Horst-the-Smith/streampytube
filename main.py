@@ -22,10 +22,10 @@ def main():
             buffer = download_audio_to_buffer(url)
         st.subheader("Download!!")
         st.download_button(
-            label="Download mp3",
+            label="Download mp4",
             data=buffer,
-            file_name=str(dt_now) + ".mp3",
-            mime="video/mp3")
+            file_name=str(dt_now) + ".mp4",
+            mime="video/mp4")
 
 if __name__ == "__main__":
     main()
