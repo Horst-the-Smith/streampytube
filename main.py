@@ -20,11 +20,11 @@ def main():
     if url:
         with st.spinner("Downloading Audio Stream from Youtube..."):
             buffer = download_audio_to_buffer(url)
-        st.subheader("Title")
+        st.subheader("Download!!")
         st.download_button(
             label="Download mp3",
             data=buffer,
-            file_name=str(dt_now),
+            file_name=str(dt_now) + ".mp3",
             mime="video/mp3")
 
 if __name__ == "__main__":
