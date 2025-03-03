@@ -4,7 +4,6 @@ import datetime
 from pytubefix import YouTube
 
 st.title("Youtube Downloder")
-st.session_state['URL'] = ("")
 dt_now = datetime.datetime.now()
 
 @st.cache_data(show_spinner=False)
