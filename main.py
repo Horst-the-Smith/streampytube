@@ -3,7 +3,7 @@ import streamlit as st
 import datetime
 from pytubefix import YouTube
 
-st.title("Youtube Downloder")
+st.title("Youtubeダウンローダー")
 dt_now = datetime.datetime.now()
 
 @st.cache_data(show_spinner=False)
@@ -15,13 +15,12 @@ def download_audio_to_buffer(url):
     return buffer
 
 def main():
-    url = st.text_input("Insert Youtube URL:")
+    url = st.text_input("YoutubeのURLを入力してください:")
     if url:
-        with st.spinner("Downloading Audio Stream from Youtube..."):
+        with st.spinner("ダウンロード中..."):
             buffer = download_audio_to_buffer(url)
-        st.subheader("Download!!")
         st.download_button(
-            label="Download mp4",
+            label="ダウンロード！！",
             data=buffer,
             file_name=str(dt_now) + ".mp4",
             mime="video/mp4")
