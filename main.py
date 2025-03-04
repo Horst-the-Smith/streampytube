@@ -17,13 +17,19 @@ def download_audio_to_buffer(url):
 def main():
     url = st.text_input("YoutubeのURLを入力してください:")
     if url:
-        with st.spinner("ダウンロード中..."):
+        with st.expander("ダウンロードオプション"):
+            form = st.selectbox(
+                'ダウンロード形式を選択',
+                ['mp3','mp4'],
+                index = 1
+            )
+        with st.spinner("準備中..."):
             buffer = download_audio_to_buffer(url)
         st.download_button(
             label="ダウンロード！！",
             data=buffer,
-            file_name=str(dt_now) + ".mp4",
-            mime="video/mp4")
+            file_name=str(dt_now) + "." +form,
+            mime="video/" + "form")
 
 if __name__ == "__main__":
     main()
